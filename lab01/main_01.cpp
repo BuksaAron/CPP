@@ -59,6 +59,5 @@ int main() {
         }
         cout << capitalizeWords(sor) << endl;
     }
-
     return 0;
 }

@@ -13,5 +13,4 @@ int countWords(std::string text);
 std::string code(std::string text);
 std::string decode(std::string text);
 std::string capitalizeWords(std::string text);
-
 #endif //FUNCTIONS_H

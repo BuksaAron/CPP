@@ -150,6 +150,5 @@ string capitalizeWords(string text) {
         }
         result += word;
     }
-
     return result;
 }
