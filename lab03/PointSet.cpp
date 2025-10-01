@@ -30,7 +30,6 @@ PointSet::PointSet(int n) {
             points.push_back(p);
         }
     }
-
     computeDistances();
 }
 
