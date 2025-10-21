@@ -12,7 +12,7 @@ using namespace std;
 Polynomial::Polynomial(int degree, const double* coefficients) {
     capacity = degree + 1;
     this -> coefficients = new double[degree + 1];
-    copy(coefficients, coefficients + 1, this -> coefficients);
+    copy(coefficients, coefficients + capacity, this -> coefficients);
 }
 
 Polynomial::Polynomial(const Polynomial &that) {
@@ -41,7 +41,7 @@ double Polynomial::evaluate(double x) const {
 Polynomial Polynomial::derivative() const {
     double *newcoefficients = new double[capacity-1];
     for (int i = 0; i < capacity - 1; ++i) {
-        newcoefficients[i] = coefficients[i] * (capacity - 1);
+        newcoefficients[i] = coefficients[i] * (capacity -i -1);
     }
     Polynomial newp(capacity - 2, newcoefficients);
     delete [] newcoefficients;
@@ -57,7 +57,7 @@ Polynomial operator -(const Polynomial &a) {
     for (int i = 0; i < a.capacity; ++i) {
         newcoefficients[i] = -a.coefficients[i];
     }
-    Polynomial newp(a.capacity - 2, newcoefficients);
+    Polynomial newp(a.capacity - 1, newcoefficients);
     delete [] newcoefficients;
     return newp;
 }
@@ -117,5 +117,17 @@ ostream & operator <<(ostream& out, const Polynomial& what) {
 }
 
 Polynomial operator *(const Polynomial &a, const Polynomial &b) {
-    return a*b;
+    int newDegree = (a.capacity - 1) + (b.capacity - 1);
+    double *newcoefficients = new double[newDegree + 1];
+    fill(newcoefficients, newcoefficients + newDegree + 1, 0.0);
+
+    for (int i = 0; i < a.capacity; ++i) {
+        for (int j = 0; j < b.capacity; ++j) {
+            newcoefficients[i + j] += a.coefficients[i] * b.coefficients[j];
+        }
+    }
+
+    Polynomial result(newDegree, newcoefficients);
+    delete[] newcoefficients;
+    return result;
 }
