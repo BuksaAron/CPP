@@ -38,13 +38,12 @@ void Matrix::fillMatrix(double value) {
 void Matrix::randomMatrix(int a, int b) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<> distribution(0, 2000);
+    std::uniform_real_distribution<> distribution(a, b);
     for (int i = 0; i < this->mRows; ++i) {
         for (int j = 0; j < this->mCols; ++j) {
-            this->mElements[i*this->mCols+j] + distribution();
+            this->mElements[i*this->mCols+j] = distribution(gen);
         }
     }
-
 }
 
 std::istream &operator>>(istream &is, Matrix &mat) {
