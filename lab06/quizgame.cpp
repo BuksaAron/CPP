@@ -20,7 +20,7 @@ void QuizGame::play() {
     cout << "\n--- " << quiz_.getName() << " ---\n";
     for (vector<QuizItem>::const_iterator it = items.begin(); it != items.end(); ++it) {
         it->displayQuestions();
-        cout << "Válaszod (1-" << items.size() << "): ";
+        cout << "Valaszod (1-4): ";
         int answer;
         cin >> answer;
 

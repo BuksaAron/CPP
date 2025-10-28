@@ -15,7 +15,7 @@ User::User(int id, const string &name) {
 void User::addresult(int quizId, double score) {
     result[quizId] = score;
 }
-
+/*
 void User::displayresult() const {
     cout << "Eredmenyek: - " << name << endl;
     if (result.empty()) {
@@ -26,7 +26,7 @@ void User::displayresult() const {
         cout << "Kviz: " << pair.first << ": " << pair.second << endl;
     }
 
-}
+}*/
 
 string User::getName() const {
     return name;

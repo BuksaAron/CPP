@@ -10,8 +10,8 @@ using namespace std;
 
 class QuizGame {
 private:
-    User user_;
-    Quiz quiz_;
+    User& user_;
+    Quiz& quiz_;
 
 public:
     QuizGame(User& user, Quiz& quiz);

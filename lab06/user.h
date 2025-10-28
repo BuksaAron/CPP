@@ -18,7 +18,7 @@ private:
 public:
     User(int id, const string& name);
     void addresult(int quizId, double score);
-    void displayresult() const;
+    //void displayresult() const;
     string getName() const;
     int getId() const;
 

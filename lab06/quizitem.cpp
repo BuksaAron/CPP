@@ -19,7 +19,7 @@ int QuizItem::getId() const {
 void QuizItem::displayQuestions() const {
     cout << questions << endl;
     for (int i = 0; i < answers.size(); ++i) {
-        cout << " " << i + 1 << answers[i] << endl;
+        cout << " " << i + 1 << " " << answers[i] << endl;
     }
 }
 

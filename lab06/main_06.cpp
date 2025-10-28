@@ -52,7 +52,7 @@ int main() {
     QuizGame game(user1, quiz1);
     game.play();
 
-    user1.displayresult();
+    //user1.displayresult();
 
     return 0;
 }

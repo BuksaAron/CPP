@@ -11,12 +11,12 @@ Quiz::Quiz(int id, const string &name) {
 }
 
 void Quiz::addItem(const QuizItem &item) {
-    if (getIsReady() == false)
+    if (!isReady)
         items.push_back(item);
 }
 
 void Quiz::finalize() {
-    isReady == true;
+    isReady = true;
 }
 
 bool Quiz::getIsReady() const {
